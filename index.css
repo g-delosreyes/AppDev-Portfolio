@@ -31,6 +31,13 @@ body { background-color: #f3f3f3 !important; }
     filter: grayscale(0%); /* Now the original color will show */
 }
 
+.hero-image { 
+    flex: 1; 
+    display: flex; 
+    justify-content: flex-end; /* This aligns it to the edge */
+    padding-right: 5%; /* ADD: This will give a small gap from the right edge */
+}
+
 /* MANUALLY CHANGE: If your photo is too small, change 'flex: 1' to 'flex: 1.5' below */
 .hero-text { flex: 1; z-index: 2; }
 .hero-text h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 10px; }
