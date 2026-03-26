@@ -32,8 +32,8 @@ body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
     padding: 0 10%;
     position: relative;
     overflow: hidden;
-    /* THIS APPLIES THE TOMASZ GAJDA SLANT */
-    background: linear-gradient(110deg, var(--bg-light) 60%, var(--bg-dark) 60%);
+
+   
 }
 
 .hero-text {
