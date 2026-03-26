@@ -10,6 +10,13 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 
+.social-icons a {
+    color: #007bff; /* Or your preferred brand blue */
+    margin-right: 15px;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
 
 /* --- NAVIGATION --- */
 .navbar {
