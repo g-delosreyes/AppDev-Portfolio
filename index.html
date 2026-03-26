@@ -1,24 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Connected Project</title>
-    
+    <title>Portfolio | Gaius Vincent Delos Reyes</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1>My Website</h1>
-    </header>
+    <nav class="navbar">
+        <div class="logo"></div> <ul class="nav-links">
+            <li><a href="#home">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Portfolio</a></li>
+            <li><a href="#contact" class="btn-contact">CONTACT ME</a></li>
+        </ul>
+    </nav>
 
-    <main class="container">
-        <h2>Everything is Connected</h2>
-        <p>This page is powered by separate CSS and JS files.</p>
-        <button id="magicButton">Click for Magic</button>
-    </main>
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h3>Hi, I am</h3>
+            <h1>Gaius Vincent Delos Reyes</h1> <p class="subtitle">Student / Aspiring Developer</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-solid fa-at"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="hero-image">
+           <img src="profile.png" alt="Your Name">
+        </div>
+    </section>
+
+    <section id="skills" class="section-container">
+        <h2 class="section-box">SKILLS</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><i class="fa-brands fa-html5" style="color: #e34f26;"></i><p>HTML5</p></div>
+            <div class="skill-item"><i class="fa-brands fa-css3-alt" style="color: #1572b6;"></i><p>CSS3</p></div>
+            <div class="skill-item"><i class="fa-brands fa-js" style="color: #f7df1e;"></i><p>JAVASCRIPT</p></div>
+            <div class="skill-item"><i class="fa-brands fa-python" style="color: #3776ab;"></i><p>PYTHON</p></div>
+            <div class="skill-item"><i class="fa-solid fa-code" style="color: #00599c;"></i><p>C++</p></div>
+            <div class="skill-item"><i class="fa-solid fa-microchip" style="color: #a8b9cc;"></i><p>C</p></div>
+        </div>
+    </section>
+
+    <section id="education" class="section-container gray-bg">
+        <h2 class="section-box">EDUCATION</h2>
+        <div class="edu-list">
+            <div class="edu-card">
+                <h3>Ateneo de Davao University</h3>
+                <p>BS in Information Technology</p>
+                <span class="date">Currently Enrolled (Class of 2024)</span>
+            </div>
+            <div class="edu-card">
+                <h3>Loyola School of Don Carlos, Inc.</h3>
+                <p>HUMSS Strand - With High Honors</p>
+                <span class="date">2022 - 2024</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-container">
+        <h2 class="section-box">PROJECTS</h2>
+        <div class="project-grid">
+            <div class="project-card" style="background-image: url('p1.jpg');">
+                <div class="overlay">   
+                    <h3>GoBuk</h3>
+                    <p>HTML / CSS / JS</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="index.js"></script>
 </body>
