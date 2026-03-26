@@ -28,14 +28,13 @@ body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 .hero-image img { 
     max-width: 90%; 
     height: auto; 
-    filter: grayscale(0%); /* Now the original color will show */
 }
 
 .hero-image { 
     flex: 1; 
     display: flex; 
     justify-content: flex-end; /* This aligns it to the edge */
-    padding-right: 5%; /* ADD: This will give a small gap from the right edge */
+    padding-right: 10%; /* ADD: This will give a small gap from the right edge */
 }
 
 /* MANUALLY CHANGE: If your photo is too small, change 'flex: 1' to 'flex: 1.5' below */
