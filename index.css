@@ -69,7 +69,7 @@ body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 .hero-image img { 
     max-width: 90%; 
     height: auto; 
-    filter: grayscale(100%); /* CHANGE: Change to 0% if you want color photo */
+    
 }
 
 /* --- SECTION HEADERS --- */
