@@ -25,51 +25,39 @@ body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 .btn-contact { border: 2px solid black; padding: 8px 15px; border-radius: 20px; }
 
 /* --- HERO SECTION --- */
-/* --- FIXED HERO SECTION --- */
 .hero {
     display: flex;
     height: 85vh;
-    
     align-items: center;
-    padding: 0 5% 0 10%; /* Reduced right padding to let image move right */
+    padding: 0 10%;
+    position: relative;
     overflow: hidden;
+    /* THIS APPLIES THE TOMASZ GAJDA SLANT */
+    background: linear-gradient(110deg, var(--bg-light) 60%, var(--bg-dark) 60%);
 }
 
-.hero-text { 
-    flex: 1; 
-    z-index: 2; 
+.hero-text {
+    flex: 1;
+    z-index: 2; /* Ensures text stays in front of the background slanted edge */
 }
 
-.hero-text h1 { 
-    font-size: 4rem; 
-    line-height: 1.1; 
-    margin-bottom: 10px; 
+.hero-text h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
 }
 
-.hero-image { 
-    flex: 1.2; /* Increased this so the image area is wider */
-    display: flex; 
-    justify-content: flex-end; /* Pushes the image to the far right */
-    align-items: flex-end;
-    height: 100%;
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Align photo area to the right edge */
 }
 
-.hero-image img { 
-    max-width: 100%; 
-    height: auto; 
-    filter: grayscale(0%); /* THIS FIXES THE COLOR */
-    display: block;
-    margin-right: -5%; /* THIS PUSHES IT EVEN FURTHER RIGHT */
-}
-
-/* MANUALLY CHANGE: If your photo is too small, change 'flex: 1' to 'flex: 1.5' below */
-.hero-text { flex: 1; z-index: 2; }
-.hero-text h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 10px; }
-.hero-image { flex: 1; display: flex; justify-content: flex-end; }
-.hero-image img { 
-    max-width: 90%; 
-    height: auto; 
-    
+.hero-image img {
+    max-width: 100%; /* Changed from 90% for a fuller look */
+    height: auto;
+    filter: grayscale(100%); /* Keeps it in B&W like the design mock */
+    transition: filter 0.3s ease; /* Adds smooth transition for Option 2 below */
 }
 
 /* --- SECTION HEADERS --- */
@@ -114,39 +102,128 @@ body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
     transform: translateY(-10px);
 }
 
-/* --- EDUCATION CARDS --- */
-.edu-list { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+/* --- EDUCATION SECTION (Timeline Design) --- */
+.gray-bg { background-color: #f6f8fa; } /* Updated gray background for better contrast */
+
+.edu-list {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px; /* Space for the timeline line */
+}
+
+/* The vertical connecting line */
+.edu-list::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    width: 3px;
+    background-color: var(--accent); /* Uses your main blue color */
+}
+
 .edu-card {
     background: white;
-    padding: 30px;
-    width: 100%;
-    max-width: 600px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     text-align: left;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent);
 }
 
-/* --- PROJECTS GRID --- */
+.edu-card:hover {
+    transform: translateX(10px); /* Moves card slightly right on hover */
+    box-shadow: 0 6px 20px rgba(0,123,255,0.15); /* Adds an accent glow */
+}
+
+/* Specify level (badge style) */
+.edu-level-badge {
+    display: inline-block;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.edu-card h3 {
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.edu-card p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-weight: 600;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* --- PORTFOLIO/PROJECTS SECTION (Clean Overlay) --- */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
+    gap: 20px;
 }
+
 .project-card {
-    height: 350px;
+    height: 300px; /* Slightly shorter for a cleaner look */
     background-size: cover;
     background-position: center;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee; /* Light boundary */
 }
+
+.project-card:hover {
+    transform: scale(1.03); /* Subtle scale-up effect */
+}
+
 .overlay {
-    position: absolute; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    color: white; display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
-    opacity: 0; transition: 0.4s;
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Dims background heavily on hover */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0s 0.4s;
+    visibility: hidden; /* Prevent interaction while hidden */
 }
-.project-card:hover .overlay { opacity: 1; }
+
+/* Makes the overlay appear sharply when the card is hovered */
+.project-card:hover .overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0s 0s;
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-weight: 600;
+    color: #bbb; /* Faded white text */
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+}
 
 /* --- RESPONSIVENESS (MOBILE) --- */
 @media (max-width: 768px) {
