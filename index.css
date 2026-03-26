@@ -26,11 +26,11 @@ body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 
 /* --- HERO SECTION --- */
 .hero-image img { 
-    max-width: 90%; 
+    max-width: 100%; 
     height: auto; 
 }
 
-.hero-image { 
+.hero-image img { 
     flex: 1; 
     display: flex; 
     justify-content: flex-end; /* This aligns it to the edge */
