@@ -25,16 +25,41 @@ body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 .btn-contact { border: 2px solid black; padding: 8px 15px; border-radius: 20px; }
 
 /* --- HERO SECTION --- */
-.hero-image img { 
-    max-width: 100%; 
-    height: auto; 
+/* --- FIXED HERO SECTION --- */
+.hero {
+    display: flex;
+    height: 85vh;
+    background: linear-gradient(110deg, var(--bg-light) 60%, var(--bg-dark) 60%);
+    align-items: center;
+    padding: 0 5% 0 10%; /* Reduced right padding to let image move right */
+    overflow: hidden;
+}
+
+.hero-text { 
+    flex: 1; 
+    z-index: 2; 
+}
+
+.hero-text h1 { 
+    font-size: 4rem; 
+    line-height: 1.1; 
+    margin-bottom: 10px; 
+}
+
+.hero-image { 
+    flex: 1.2; /* Increased this so the image area is wider */
+    display: flex; 
+    justify-content: flex-end; /* Pushes the image to the far right */
+    align-items: flex-end;
+    height: 100%;
 }
 
 .hero-image img { 
-    flex: 1; 
-    display: flex; 
-    justify-content: flex-end; /* This aligns it to the edge */
-    padding-right: 10%; /* ADD: This will give a small gap from the right edge */
+    max-width: 100%; 
+    height: auto; 
+    filter: grayscale(0%); /* THIS FIXES THE COLOR */
+    display: block;
+    margin-right: -5%; /* THIS PUSHES IT EVEN FURTHER RIGHT */
 }
 
 /* MANUALLY CHANGE: If your photo is too small, change 'flex: 1' to 'flex: 1.5' below */
