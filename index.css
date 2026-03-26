@@ -56,7 +56,6 @@ body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 .hero-image img {
     max-width: 100%; /* Changed from 90% for a fuller look */
     height: auto;
-    filter: grayscale(100%); /* Keeps it in B&W like the design mock */
     transition: filter 0.3s ease; /* Adds smooth transition for Option 2 below */
 }
 
