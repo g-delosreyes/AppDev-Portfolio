@@ -29,7 +29,7 @@ body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 .hero {
     display: flex;
     height: 85vh;
-    background: linear-gradient(110deg, var(--bg-light) 60%, var(--bg-dark) 60%);
+    
     align-items: center;
     padding: 0 5% 0 10%; /* Reduced right padding to let image move right */
     overflow: hidden;
